@@ -1,0 +1,15 @@
+{% extends "kaju/processing.html" %}
+{% load static %}
+{% block head%} <font color="Blue">Peeling</font> {% endblock%}
+{% block content%}
+
+<div>
+  <form method="POST">
+    {% csrf_token %}
+    {{process.as_p}}
+    <input type="submit" name="submit_form" value="Submit">
+  </form>
+</div>
+
+
+{% endblock %}

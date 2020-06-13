@@ -1,0 +1,46 @@
+{% extends "kaju/processing.html" %}
+{% load static %}
+{% block head%} <font color="yellow">Cooking</font> {% endblock%}
+{% block content%}
+
+<!--<form method = "POST" onchange="form.submit();">-->
+<!--   {% csrf_token %}-->
+<!--   {{buck_info.bucket}}-->
+<!--&lt;!&ndash;    {{buck_info.quantity}}&ndash;&gt;-->
+<!--    <input type="submit" name="check_qty" value="Submit"/></form>-->
+<!--<h4>{{quantity}}</h4>-->
+<!--&lt;!&ndash;<h4>{{buck_info.quantity.value}}</h4>&ndash;&gt;-->
+<div>
+    <table style="width:100%">
+        <tr>
+            <th valign="top"> <h3>Availability</h3> </th>
+        </tr>
+        <tr>
+           <td valign="top">
+                <table style="width:100%" class="table">
+                    <tr>
+                        <th> Bucket</th>
+                        <th>Country</th>
+                        <th> Quantity</th>
+                    </tr>
+                    {% for q in quantity %}
+
+                    <tr>
+                        <td>{{q.bucket_name}}</td>
+                        <td>{{q.region.country}}</td>
+                        <td>{{q.quantity}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+            </td>
+        </tr>
+
+
+    </table>
+</div>
+
+
+<!--<h4>{{quantity}}</h4>-->
+
+{% endblock %}

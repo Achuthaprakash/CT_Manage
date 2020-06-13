@@ -1,0 +1,43 @@
+{% extends "kaju/processing.html" %}
+{% load static %}
+{% block head%} <font color="Green">Grading</font> {% endblock%}
+{% block content%}
+
+<div>
+  <form method="POST">
+      {% csrf_token %}
+
+      <table class="table table-striped table-hover">
+          <tr>
+              <td> Date:</td>
+              <td>{{process.grading_date}}</td>
+          </tr>
+          <tr>
+              <td>Lot:</td>
+              <td>{{process.grading_lot}}</td>
+          </tr>
+          <tr class="table-info">
+<!--              <th> Wholes/Pieces </th>-->
+              <th> Grade</th>
+              <th> Quantity</th>
+          </tr>
+          {% for grade in grades %}
+          <tr>
+<!--            <td>{{grade.grade_type}}</td>-->
+            <td>{{grade.grade_names}}:</td>
+            <td><input type="number" name = "grade-{{forloop.counter}}"></td>
+          </tr>
+      {% endfor %}
+
+
+
+
+      </table>
+
+<!--    {{process.as_p}}-->
+    <input type="submit" name="submit_form" value="Submit" class = " btn-info">
+  </form>
+</div>
+
+
+{% endblock %}

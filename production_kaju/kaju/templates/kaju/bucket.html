@@ -1,0 +1,29 @@
+{% extends "kaju/index.html" %}
+{% load static %}
+{% block head%} <font color="orange">Purchase</font> {% endblock%}
+{% block content%}
+    <form method="POST" name="purform">
+        {% csrf_token %}
+        <h4>{{process.as_p}}</h4>
+        <input type="button" name="" value="Submit" class="btn btn-primary" onclick="submitForm();">
+        <script>
+            function submitForm() {
+
+            var frm = document.getElementsByName('purform')[0];
+            frm.submit(); // Submit the form
+            frm.reset();  // Reset all form data
+            return false; // Prevent page refresh
+            }
+<!--            function submitForm() {-->
+
+
+<!--            document.purform.submit();-->
+<!--            document.purform.reset();-->
+<!--            return false;   -->
+
+<!--            }-->
+        </script>
+    </form>
+<p> </p>
+    <a href="/dry_rcn" class = "btn btn-warning btn-lg">RCN Drying</a>
+{% endblock %}

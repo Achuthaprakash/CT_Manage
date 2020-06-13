@@ -1,0 +1,17 @@
+{% extends "kaju/base.html" %}
+
+{% block body_block %}
+<div class="jumbotron">
+
+    <h4> Please login Here </h4>
+    <form action="{% url 'kaju:login' %}" method="post">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" name="username" placeholder="Enter your username">
+        <label for="password">Password:</label>
+        <input type="text" name="password" placeholder="Enter your Password">
+
+        <input type="submit" value="Login">
+    </form>
+</div>
+{% endblock %}

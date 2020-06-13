@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cashew</title>
+
+    <link rel="stylesheet" href="{%static '/css/bootstrap.min.css' %}">
+
+
+  </head>
+  <body>
+
+    <style media="screen">
+      body{
+        background-image: url("static/img/Cashew 3.jpg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+      }
+    </style>
+
+    <div class="container" style="background-image: url("/static/img/Cashew 3.jpg")">
+      <div class="jumbotron bg-light text-warning">
+        <h1> {% block head %}Home page:{% endblock %} </h1>
+        <div class="container text-dark">
+
+          <p></p>
+        </div>
+
+        <div class="container">
+          <a href="/" class = "btn btn-info btn-lg ">Home</a>
+          <a href="/bucket" class = "btn btn-warning btn-lg ">Purchase</a>
+          <a href="/processing" class = "btn btn-success btn-lg ">Processing</a>
+          <a href="/stock" class = "btn btn-danger btn-lg ">Stock</a>
+          <a href="/info" class = "btn btn-info btn-lg ">Customer Info</a>
+          <a href="/Add_static" class = "btn btn-danger btn-lg ">Add_static</a>
+
+
+        </div>
+
+      </div>
+    </div>
+    <div class="container">{% block content %} {% endblock %}</div>
+
+
+  </body>
+</html>

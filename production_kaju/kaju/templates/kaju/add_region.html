@@ -1,0 +1,27 @@
+{% extends "kaju/Add_static.html" %}
+
+
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{%static "/css/bootstrap.min.css" %}">
+{% endblock stylesheets %}
+
+{% block title %} Add Country {% endblock %}
+
+
+{% block content%}
+
+<form method="POST">
+    {% csrf_token %}
+    <h4>{{process.as_p}}</h4>
+    <h4><input type="submit" value="Submit"></h4>
+</form>
+
+
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Search</title>
+    <link rel="stylesheet" href="{% static "/css/bootstrap.min.css" %}">
+  </head>
+  <body>
+
+  <style media="screen">
+    body{
+      background-image: url("/static/img/store.jpg");
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  </style>
+  <div class="container">
+    <div class="jumbotron bg-success">
+      <h1>Add new Item</h1>
+      <div class="container">
+        <a href="http://127.0.0.1:8000/" class = "btn btn-default btn-light">Home</a>
+
+      </div>
+
+    </div>
+
+  </div>
+  <div class="container bg-light py-3">
+
+    <form  method="post">
+      <table border="2">
+        {% csrf_token %}
+        {{add_form}}
+      </table>
+      <p></p>
+      <p></p>
+      <input type="submit" name="" value="Submit" class="btn btn-primary">
+
+    </form>
+
+
+  </body>
+</html>

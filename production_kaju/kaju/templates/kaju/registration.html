@@ -1,0 +1,19 @@
+{% extends "kaju/base.html" %}
+
+{% block body_block %}
+
+<div class="jumbotron">
+    <h1>Kaju</h1>
+    {% if registered %}
+    <h2> User already registered </h2>
+    {% else %}
+    <h2>Register Here !</h2>
+    <h3>Fill out the form:</h3>
+    <form method = "post">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        <input type="submit" name="" id="Register">
+    </form>
+    {% endif %}
+</div>
+{% endblock %}

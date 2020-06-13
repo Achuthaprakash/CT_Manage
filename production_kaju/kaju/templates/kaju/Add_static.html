@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Static_add</title>
+    <link rel="stylesheet" href="{%static "/css/bootstrap.min.css" %}">
+</head>
+<body>
+
+<div class="jumbotron">
+
+
+    <h1>{% block title %}Add required data here{% endblock%}</h1>
+
+
+    <div class="container">
+        <div id="mySidenav" class="sidenav"><a href="/">Home</a>
+        <a href="/add_country" class ="btn">Add Country</a>
+        <a href="/add_region" class="btn"><i class="glyphicon glyphicon-globe"></i>Add Region</a>
+        <a href="/add_grade" class="btn"><i class="glyphicon glyphicon-globe"></i>Add Grades</a>
+
+<!--        <ul class="sidenav"><li><a href="#" class="btn"><i class="glyphicon glyphicon-globe"></i>Add Region</a></li>-->
+<!--        <li><a href="#" class ="btn">Add Country</a></li>-->
+
+<!--        </ul>-->
+        </div>
+    </div>
+</div>
+<div class="container">{% block content %}{% endblock %}</div>
+</body>
+</html>
